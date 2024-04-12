@@ -1,0 +1,158 @@
+  let video = {
+    "src_thumbnail": "imgs/thumbnails/v1_steering_wheel_thumbnail.jpg",
+    "src_profile_pic": "imgs/profile_pics/v1_steering_wheel_profile_pic.jpg",
+    "title": "V23 RACING WHEEL",
+    "profile_name": "MTM Industrial",
+    "view_count": "470",
+    "time_past": "2 days",
+  };
+
+
+
+
+
+
+
+
+
+
+// app.js
+  
+
+"use strict"
+window.addEventListener('load', main);
+// Everything shall be inside main()
+
+
+
+
+class VideoObj {
+  constructor(
+    src_thumbnail = null,
+    src_profile_pic = null,
+    title = null,
+    profile_name = null,
+    view_count = null,
+    time_past = null
+  ) {
+    this.src_thumbnail = src_thumbnail;
+    this.src_profile_pic = src_profile_pic;
+    this.title = title;
+    this.profile_name = profile_name;
+    this.view_count = view_count;
+    this.time_past = time_past;
+  }
+}
+
+function main(){
+  // Start script
+
+  let vid = new VideoObj(); 
+  for (let item of videoList){
+    vid.src_thumbnail=item["src_thumbnail"];
+    vid.src_profile_pic=item["src_profile_pic"];
+    vid.title=item["title"];
+    vid.profile_name=item["profile_name"];
+    vid.view_count=item["view_count"];
+    vid.time_past=item["time_past"];
+    CreateVideo(vid);
+  }
+  
+
+
+
+
+
+
+  // End script
+}
+
+function CreateVideo(videoRef) {
+  // access the video-list
+  let div_video_list = document.querySelector("#video-list");
+
+  // create the card video wrapper with its attributes
+  let div_wrap = document.createElement("div");
+  div_wrap.setAttribute("class", "main-video-wrapper");
+
+  // append the video card into the list
+  div_video_list.appendChild(div_wrap);
+
+  // create the thumbnail with its attributes
+  let img_thumbnail = document.createElement("img");
+  img_thumbnail.setAttribute("src", videoRef["src_thumbnail"]);
+  img_thumbnail.setAttribute("class", "main-video-thumbnail");
+
+  // append the video thumbnail into the card video
+  div_wrap.appendChild(img_thumbnail);
+
+  let div_wrap_sec = document.createElement("div");
+  div_wrap_sec.setAttribute("class", "main-video-wrapper-second");
+  div_wrap.appendChild(div_wrap_sec);
+
+  let img_profile_pic = document.createElement("img");
+  img_profile_pic.setAttribute("src", videoRef["src_profile_pic"]);
+  img_profile_pic.setAttribute("class", "main-video-profile-pic");
+  div_wrap_sec.appendChild(img_profile_pic)
+
+  let div_wrap_third = document.createElement("div");
+  div_wrap_third.setAttribute("class", "main-video-wrapper-third");
+  div_wrap_sec.appendChild(div_wrap_third);
+
+  let p_title = document.createElement("p");
+  p_title.innerHTML = videoRef["title"];
+  p_title.setAttribute("class", "main-video-title");
+  div_wrap_third.appendChild(p_title);
+
+  let p_profile_name = document.createElement("p");
+  p_profile_name.innerHTML = videoRef["profile_name"];
+  p_profile_name.setAttribute("class", "main-video-profile_name");
+  div_wrap_third.appendChild(p_profile_name);
+
+
+  let p_profile_stats = document.createElement("p");
+  p_profile_stats.setAttribute("class", "main-video-profile-stats");
+  div_wrap_third.appendChild(p_profile_stats);
+
+  let span_view_count = document.createElement("span");
+  span_view_count.setAttribute("class", "view_count_id");
+  span_view_count.innerHTML = videoRef["view_count"] + " views &bull; ";
+  p_profile_stats.appendChild(span_view_count);
+
+  let span_time_past = document.createElement("span");
+  span_time_past.setAttribute("class", "time_past_id");
+  span_time_past.innerText = videoRef["time_past"] + " ago";
+  p_profile_stats.appendChild(span_time_past);
+
+}
+
+
+
+
+
+
+
+
+
+//html
+
+<div class="main_video_wrapper">
+        <img
+          src="imgs/thumbnails/v1_steering_wheel_thumbnail.jpg"
+          class="main_video_thumbnail"
+        />
+        <div class="main_video_wrapper_second">
+          <img
+            src="imgs/profile_pics/v1_steering_wheel_profile_pic.jpg"
+            class="main_video_profile_pic"
+          />
+          <div class="main_video_wrapper_third">
+            <p class="main_video_title">V23 RACING WHEEL</p>
+            <p class="main_video_profile_name" id="gray">MTM Industrial</p>
+            <p class="main_video_profile_stats">
+              <span class="view_count_id"> 470 </span> views &bull;
+              <span class="time_past_id"> 2 days </span> ago
+            </p>
+          </div>
+        </div>
+      </div>
