@@ -51,8 +51,9 @@ function main(){
 
   // End script
 }
-function CreateReel(reelListData){
 
+
+function CreateReel(reelListData){
   
   // access the short_list
   let div_short_list = document.querySelector("#short_list");
@@ -89,6 +90,7 @@ function CreateReel(reelListData){
           <div class="main_short_thumbnail_wrapper">
             <img src="imgs/reels/thumbnails/v1_steering_wheel_reel_thumbnail.jpg" class="main_short_thumbnail">
           </div>
+          
           <p class="main_short_title">
             Which one?🤔Logitech G920/G29/G25/GT/Pro, Thrustmaster T150, Fanatec GT3 #granturismo
           </p>
