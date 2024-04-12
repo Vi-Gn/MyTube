@@ -1,31 +1,12 @@
 
 
 "use strict"
-// window.addEventListener('load', main);
+window.addEventListener('load', main);
 // Everything shall be inside main()
 
 
 
-
-// class VideoObj {
-//   constructor(
-//     src_thumbnail = null,
-//     src_profile_pic = null,
-//     title = null,
-//     profile_name = null,
-//     view_count = null,
-//     time_past = null
-//   ) {
-//     this.src_thumbnail = src_thumbnail;
-//     this.src_profile_pic = src_profile_pic;
-//     this.title = title;
-//     this.profile_name = profile_name;
-//     this.view_count = view_count;
-//     this.time_past = time_past;
-//   }
-// }
-
-main();
+// main();
 
 function main(){
   // Start script
@@ -37,7 +18,6 @@ function main(){
     CreateReel(item);
   }
   
-
   // End script
 }
 
@@ -72,8 +52,7 @@ function CreateReel(reelListData){
   p_short_title.innerHTML = reelListData["title"];
   p_short_title.setAttribute("class", "main_short_title");
   div_wrap_short.appendChild(p_short_title);
-  
-  
+    
   let p_profile_stats = document.createElement("p");
   p_profile_stats.setAttribute("class", "main_short_profile_stats");
   div_wrap_short.appendChild(p_profile_stats);
@@ -127,7 +106,6 @@ function CreateVideo(videoListData) {
   p_profile_name.setAttribute("class", "main_video_profile_name");
   p_profile_name.innerHTML = videoListData["profile_name"];
   div_wrap_third.appendChild(p_profile_name);
-
 
   let p_profile_stats = document.createElement("p");
   p_profile_stats.setAttribute("class", "main_video_profile_stats");
