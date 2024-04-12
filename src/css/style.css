@@ -60,9 +60,9 @@ div.main_video_wrapper > div.main_video_wrapper_second > div.main_video_wrapper_
 div.main_video_wrapper > div.main_video_wrapper_second > div.main_video_wrapper_third > p.main_video_title {
   font-weight: bold;
   padding: 15px;
-  height: 55px;
+  height: 50px;
   width: 100%;
-
+  /* margin: 5px; */
   overflow: hidden;
   text-overflow: ellipsis;
 
@@ -73,7 +73,12 @@ div.main_video_wrapper > div.main_video_wrapper_second > div.main_video_wrapper_
   white-space: no-wrap; /*Not necessary*/
   
 }
-div.main_video_wrapper > div.main_video_wrapper_second > div.main_video_wrapper_third > p.main_video_profile_name,
+div.main_video_wrapper > div.main_video_wrapper_second > div.main_video_wrapper_third > p.main_video_profile_name{
+  color: gray;
+  padding-left: 15px;
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
 div.main_video_wrapper > div.main_video_wrapper_second > div.main_video_wrapper_third > p.main_video_profile_stats {
   color: gray;
   padding-left: 15px;

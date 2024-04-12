@@ -7,47 +7,36 @@
 
 
 
-class VideoObj {
-  constructor(
-    src_thumbnail = null,
-    src_profile_pic = null,
-    title = null,
-    profile_name = null,
-    view_count = null,
-    time_past = null
-  ) {
-    this.src_thumbnail = src_thumbnail;
-    this.src_profile_pic = src_profile_pic;
-    this.title = title;
-    this.profile_name = profile_name;
-    this.view_count = view_count;
-    this.time_past = time_past;
-  }
-}
+// class VideoObj {
+//   constructor(
+//     src_thumbnail = null,
+//     src_profile_pic = null,
+//     title = null,
+//     profile_name = null,
+//     view_count = null,
+//     time_past = null
+//   ) {
+//     this.src_thumbnail = src_thumbnail;
+//     this.src_profile_pic = src_profile_pic;
+//     this.title = title;
+//     this.profile_name = profile_name;
+//     this.view_count = view_count;
+//     this.time_past = time_past;
+//   }
+// }
 
 main();
 
 function main(){
   // Start script
 
-  let vid = new VideoObj(); 
   for (let item of videoList){
-    vid.src_thumbnail=item["src_thumbnail"];
-    vid.src_profile_pic=item["src_profile_pic"];
-    vid.title=item["title"];
-    vid.profile_name=item["profile_name"];
-    vid.view_count=item["view_count"];
-    vid.time_past=item["time_past"];
-    CreateVideo(vid);
+    CreateVideo(item);
   }
   for (let item of reelList){
     CreateReel(item);
   }
   
-
-
-
-
 
   // End script
 }
@@ -84,26 +73,7 @@ function CreateReel(reelListData){
   p_short_title.setAttribute("class", "main_short_title");
   div_wrap_short.appendChild(p_short_title);
   
-  /*
-      <div id="short_list">
-        <div class="main_short_wrapper">
-          <div class="main_short_thumbnail_wrapper">
-            <img src="imgs/reels/thumbnails/v1_steering_wheel_reel_thumbnail.jpg" class="main_short_thumbnail">
-          </div>
-          
-          <p class="main_short_title">
-            Which one?🤔Logitech G920/G29/G25/GT/Pro, Thrustmaster T150, Fanatec GT3 #granturismo
-          </p>
-
-
-          <p class="main_short_profile_stats">
-            <span class="view_count_short_id"> 1.3M </span> views
-          </p>
-        </div>
-      </div>
-  */
-
-  ///// 
+  
   let p_profile_stats = document.createElement("p");
   p_profile_stats.setAttribute("class", "main_short_profile_stats");
   div_wrap_short.appendChild(p_profile_stats);
@@ -112,9 +82,11 @@ function CreateReel(reelListData){
   span_view_count.setAttribute("class", "view_count_short_id");
   span_view_count.innerHTML = reelListData["view_count"] + " views ";
   p_profile_stats.appendChild(span_view_count);
+
 }
 
 function CreateVideo(videoListData) {
+
   // access the video_list
   let div_video_list = document.querySelector("#video_list");
 
